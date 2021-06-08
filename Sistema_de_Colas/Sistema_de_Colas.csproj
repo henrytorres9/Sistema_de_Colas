@@ -58,6 +58,36 @@
     <Compile Include="FormResultados.Designer.cs">
       <DependentUpon>FormResultados.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmMD1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMD1.Designer.cs">
+      <DependentUpon>frmMD1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMEk1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMEk1.Designer.cs">
+      <DependentUpon>frmMEk1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMG1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMG1.Designer.cs">
+      <DependentUpon>frmMG1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMM1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMM1.Designer.cs">
+      <DependentUpon>frmMM1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMPrincipal.Designer.cs">
+      <DependentUpon>frmMPrincipal.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormSplash.resx">
@@ -65,6 +95,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormResultados.resx">
       <DependentUpon>FormResultados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMD1.resx">
+      <DependentUpon>frmMD1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMEk1.resx">
+      <DependentUpon>frmMEk1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMG1.resx">
+      <DependentUpon>frmMG1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMM1.resx">
+      <DependentUpon>frmMM1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMPrincipal.resx">
+      <DependentUpon>frmMPrincipal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -91,6 +136,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Imagen1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Imagen_MM1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Imagen_MG1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Imagen_MEK1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Imagen_MD1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

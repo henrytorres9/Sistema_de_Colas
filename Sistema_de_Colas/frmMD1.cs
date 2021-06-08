@@ -10,14 +10,16 @@ using System.Windows.Forms;
 
 namespace Sistema_de_Colas
 {
-    public partial class FormResultados : Form
+    public partial class frmMD1 : Form
     {
-        public FormResultados()
+        public frmMD1()
         {
             InitializeComponent();
         }
-        private void FormResultados_Load(object sender, EventArgs e)
+
+        private void frmMD1_Load(object sender, EventArgs e)
         {
+            btnCalcularUtilizacion.Enabled = false;
             btnCalcularMediaLlegadas.Enabled = false;
             btnCalcularMediaServicio.Enabled = false;
             btnCalcularEspera.Enabled = false;
@@ -28,6 +30,7 @@ namespace Sistema_de_Colas
             lblLlegadas.Visible = false;
             lblServicio.Visible = false;
             lblEspera.Visible = false;
+            lblUtilizacionSistema.Visible = false;
             lblEsperaSistema.Visible = false;
             lblEsperaClientesSistema.Visible = false;
             lblEsperaClientesCola.Visible = false;
@@ -38,6 +41,7 @@ namespace Sistema_de_Colas
             var vr = !string.IsNullOrEmpty(txtEspera.Text) && !string.IsNullOrEmpty(txtLlegadas.Text)
                 && !string.IsNullOrEmpty(txtServicios.Text);
 
+            btnCalcularUtilizacion.Enabled = vr;
             btnCalcularMediaLlegadas.Enabled = vr;
             btnCalcularMediaServicio.Enabled = vr;
             btnCalcularEspera.Enabled = vr;
@@ -45,6 +49,17 @@ namespace Sistema_de_Colas
             btnCalcularEsperaClientesSistema.Enabled = vr;
             btnCalcularEsperaClientesCola.Enabled = vr;
             button2.Enabled = vr;
+        }
+
+        private void btnCalcularUtilizacion_Click(object sender, EventArgs e)
+        {
+            lblUtilizacionSistema.Visible = true;
+
+            double llegadas = Convert.ToDouble(txtLlegadas.Text); //lambda
+            double servicio = Convert.ToDouble(txtServicios.Text); //miu
+            double resultUtilizacionSistema = (llegadas / servicio) * 100; //P con porcentaje
+
+            lblUtilizacionSistema.Text = resultUtilizacionSistema.ToString() + " %";
         }
 
         private void btnCalcularMediaLlegadas_Click(object sender, EventArgs e)
@@ -60,49 +75,11 @@ namespace Sistema_de_Colas
         private void btnCalcularMediaServicio_Click(object sender, EventArgs e)
         {
             lblServicio.Visible = true;
-            
+
             double servicio = Convert.ToDouble(txtServicios.Text);
             double resultServicio = servicio / 60; //m
 
             lblServicio.Text = resultServicio.ToString() + " clientes por minuto.";
-        }
-
-        private void btnCalcularEspera_Click(object sender, EventArgs e)
-        {
-            lblEspera.Visible = true;
-            
-            double espera = Convert.ToDouble(txtEspera.Text); //Wq
-
-            lblEspera.Text = espera.ToString() + " minuto (s).";
-        }
-
-        private void btnCalcularEsperaSistema_Click(object sender, EventArgs e)
-        {
-            lblEsperaSistema.Visible = true;
-            
-            double servicio = Convert.ToDouble(txtServicios.Text);
-            double resultServicio = servicio / 60; //m
-            double espera = Convert.ToDouble(txtEspera.Text); //Wq
-            double resultEsperaSistema = espera + (1 / resultServicio);
-
-            lblEsperaSistema.Text = resultEsperaSistema.ToString() + " minuto (s).";
-        }
-
-        private void btnCalcularEsperaClientesSistema_Click(object sender, EventArgs e)
-        {
-            lblEsperaClientesSistema.Visible = true;
-            
-            double servicio = Convert.ToDouble(txtServicios.Text);
-            double resultServicio = servicio / 60; //m
-            double espera = Convert.ToDouble(txtEspera.Text); //Wq
-            double resultEsperaSistema = espera + (1 / resultServicio); //Ws
-
-            double llegadas = Convert.ToDouble(txtLlegadas.Text);
-            double resultLlegadas = llegadas / 60; //Lambda
-
-            int resultEsperaClientesSistema = ((int)(resultLlegadas * resultEsperaSistema)); //Ls
-
-            lblEsperaClientesSistema.Text = resultEsperaClientesSistema.ToString() + " clientes.";
         }
 
         private void btnCalcularEsperaClientesCola_Click(object sender, EventArgs e)
@@ -111,11 +88,70 @@ namespace Sistema_de_Colas
 
             double llegadas = Convert.ToDouble(txtLlegadas.Text);
             double resultLlegadas = llegadas / 60; //Lambda
-            double espera = Convert.ToDouble(txtEspera.Text); //Wq
+            double servicio = Convert.ToDouble(txtServicios.Text);
+            double resultServicio = servicio / 60; //m
+            double resultUtilizacionSistema = (llegadas / servicio); //utilización sin porcentaje (p)
 
-            double resultEsperaClientesCola = (resultLlegadas * espera);
+            double resultEsperaClientesCola = ((resultUtilizacionSistema * resultUtilizacionSistema) / (2 * (1 - resultUtilizacionSistema))); //Lq
 
             lblEsperaClientesCola.Text = resultEsperaClientesCola.ToString() + " promedio de \nclientes.";
+        }
+
+        private void btnCalcularEspera_Click(object sender, EventArgs e)
+        {
+            lblEspera.Visible = true;
+
+            double llegadas = Convert.ToDouble(txtLlegadas.Text);
+            double resultLlegadas = llegadas / 60; //Lambda
+            double servicio = Convert.ToDouble(txtServicios.Text);
+            double resultServicio = servicio / 60; //m
+            double resultUtilizacionSistema = (llegadas / servicio); //utilización sin porcentaje (p)
+
+            double resultEsperaClientesCola = ((resultUtilizacionSistema * resultUtilizacionSistema) / (2 * (1 - resultUtilizacionSistema))); //Lq
+
+            double resultEspera = resultEsperaClientesCola / resultLlegadas; //Wq
+
+            lblEspera.Text = resultEspera.ToString() + " minuto (s).";
+        }
+
+        private void btnCalcularEsperaSistema_Click(object sender, EventArgs e)
+        {
+            lblEsperaSistema.Visible = true;
+
+            double llegadas = Convert.ToDouble(txtLlegadas.Text);
+            double resultLlegadas = llegadas / 60; //Lambda
+            double servicio = Convert.ToDouble(txtServicios.Text);
+            double resultServicio = servicio / 60; //m
+            double resultUtilizacionSistema = (llegadas / servicio); //utilización sin porcentaje (p)
+
+            double resultEsperaClientesCola = ((resultUtilizacionSistema * resultUtilizacionSistema) / (2 * (1 - resultUtilizacionSistema))); //Lq
+
+            double resultEspera = resultEsperaClientesCola / resultLlegadas; //Wq
+
+            double resultEsperaSistema = resultEspera + (1 / resultServicio); //Ws
+
+            lblEsperaSistema.Text = resultEsperaSistema.ToString() + " minuto (s).";
+        }
+
+        private void btnCalcularEsperaClientesSistema_Click(object sender, EventArgs e)
+        {
+            lblEsperaClientesSistema.Visible = true;
+
+            double llegadas = Convert.ToDouble(txtLlegadas.Text);
+            double resultLlegadas = llegadas / 60; //Lambda
+            double servicio = Convert.ToDouble(txtServicios.Text);
+            double resultServicio = servicio / 60; //m
+            double resultUtilizacionSistema = (llegadas / servicio); //utilización sin porcentaje (p)
+
+            double resultEsperaClientesCola = ((resultUtilizacionSistema * resultUtilizacionSistema) / (2 * (1 - resultUtilizacionSistema))); //Lq
+
+            double resultEspera = resultEsperaClientesCola / resultLlegadas; //Wq
+
+            double resultEsperaSistema = resultEspera + (1 / resultServicio); //Ws
+
+            double resultEsperaClientesSistema = Math.Abs(resultLlegadas * resultEsperaSistema); //Ls
+
+            lblEsperaClientesSistema.Text = resultEsperaClientesSistema.ToString() + " clientes.";
         }
 
         private void txtLlegadas_TextChanged(object sender, EventArgs e)
@@ -133,9 +169,26 @@ namespace Sistema_de_Colas
             validarCampo();
         }
 
-        private void btnSalir_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            btnCalcularUtilizacion.Enabled = false;
+            btnCalcularMediaLlegadas.Enabled = false;
+            btnCalcularMediaServicio.Enabled = false;
+            btnCalcularEspera.Enabled = false;
+            btnCalcularEsperaSistema.Enabled = false;
+            btnCalcularEsperaClientesSistema.Enabled = false;
+            btnCalcularEsperaClientesCola.Enabled = false;
+            button2.Enabled = false;
+            lblUtilizacionSistema.Visible = false;
+            lblLlegadas.Visible = false;
+            lblServicio.Visible = false;
+            lblEspera.Visible = false;
+            lblEsperaSistema.Visible = false;
+            lblEsperaClientesSistema.Visible = false;
+            lblEsperaClientesCola.Visible = false;
+            txtLlegadas.Text = "";
+            txtServicios.Text = "";
+            txtEspera.Text = "";
         }
 
         private void txtLlegadas_KeyPress(object sender, KeyPressEventArgs e)
@@ -177,39 +230,9 @@ namespace Sistema_de_Colas
             }
         }
 
-        private void txtLlegadas_Enter(object sender, EventArgs e)
+        private void btnSalir_Click(object sender, EventArgs e)
         {
-            txtLlegadas.Text = "";
-        }
-
-        private void txtServicios_Enter(object sender, EventArgs e)
-        {
-            txtServicios.Text = "";
-        }
-
-        private void txtEspera_Enter(object sender, EventArgs e)
-        {
-            txtEspera.Text = "";
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            btnCalcularMediaLlegadas.Enabled = false;
-            btnCalcularMediaServicio.Enabled = false;
-            btnCalcularEspera.Enabled = false;
-            btnCalcularEsperaSistema.Enabled = false;
-            btnCalcularEsperaClientesSistema.Enabled = false;
-            btnCalcularEsperaClientesCola.Enabled = false;
-            button2.Enabled = false;
-            lblLlegadas.Visible = false;
-            lblServicio.Visible = false;
-            lblEspera.Visible = false;
-            lblEsperaSistema.Visible = false;
-            lblEsperaClientesSistema.Visible = false;
-            lblEsperaClientesCola.Visible = false;
-            txtLlegadas.Text = "";
-            txtServicios.Text = "";
-            txtEspera.Text = "";
+            Application.Exit();
         }
 
         private void btnMenuPrincipal_Click(object sender, EventArgs e)

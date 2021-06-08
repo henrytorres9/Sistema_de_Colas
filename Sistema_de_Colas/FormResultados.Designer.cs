@@ -59,6 +59,7 @@ namespace Sistema_de_Colas
             this.txtEspera = new System.Windows.Forms.TextBox();
             this.btnSalir = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.btnMenuPrincipal = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -70,7 +71,7 @@ namespace Sistema_de_Colas
             this.btnCalcularMediaLlegadas.Location = new System.Drawing.Point(1044, 349);
             this.btnCalcularMediaLlegadas.Name = "btnCalcularMediaLlegadas";
             this.btnCalcularMediaLlegadas.Size = new System.Drawing.Size(307, 32);
-            this.btnCalcularMediaLlegadas.TabIndex = 10;
+            this.btnCalcularMediaLlegadas.TabIndex = 3;
             this.btnCalcularMediaLlegadas.Text = "Calcular media de llegadas";
             this.btnCalcularMediaLlegadas.UseVisualStyleBackColor = false;
             this.btnCalcularMediaLlegadas.Click += new System.EventHandler(this.btnCalcularMediaLlegadas_Click);
@@ -82,9 +83,8 @@ namespace Sistema_de_Colas
             this.lblLlegadas.ForeColor = System.Drawing.Color.Yellow;
             this.lblLlegadas.Location = new System.Drawing.Point(468, 349);
             this.lblLlegadas.Name = "lblLlegadas";
-            this.lblLlegadas.Size = new System.Drawing.Size(87, 32);
+            this.lblLlegadas.Size = new System.Drawing.Size(0, 32);
             this.lblLlegadas.TabIndex = 28;
-            this.lblLlegadas.Text = "jjjjjjjj";
             // 
             // lblServicio
             // 
@@ -93,9 +93,8 @@ namespace Sistema_de_Colas
             this.lblServicio.ForeColor = System.Drawing.Color.Yellow;
             this.lblServicio.Location = new System.Drawing.Point(458, 415);
             this.lblServicio.Name = "lblServicio";
-            this.lblServicio.Size = new System.Drawing.Size(141, 32);
+            this.lblServicio.Size = new System.Drawing.Size(0, 32);
             this.lblServicio.TabIndex = 27;
-            this.lblServicio.Text = "jjjjjjjjjjjjjj";
             // 
             // lblEspera
             // 
@@ -104,9 +103,8 @@ namespace Sistema_de_Colas
             this.lblEspera.ForeColor = System.Drawing.Color.Yellow;
             this.lblEspera.Location = new System.Drawing.Point(569, 483);
             this.lblEspera.Name = "lblEspera";
-            this.lblEspera.Size = new System.Drawing.Size(140, 32);
+            this.lblEspera.Size = new System.Drawing.Size(0, 32);
             this.lblEspera.TabIndex = 26;
-            this.lblEspera.Text = "esperacola";
             // 
             // lblEsperaSistema
             // 
@@ -115,9 +113,8 @@ namespace Sistema_de_Colas
             this.lblEsperaSistema.ForeColor = System.Drawing.Color.Yellow;
             this.lblEsperaSistema.Location = new System.Drawing.Point(604, 551);
             this.lblEsperaSistema.Name = "lblEsperaSistema";
-            this.lblEsperaSistema.Size = new System.Drawing.Size(120, 32);
+            this.lblEsperaSistema.Size = new System.Drawing.Size(0, 32);
             this.lblEsperaSistema.TabIndex = 25;
-            this.lblEsperaSistema.Text = "kkkkkkk";
             // 
             // lblEsperaClientesCola
             // 
@@ -126,9 +123,8 @@ namespace Sistema_de_Colas
             this.lblEsperaClientesCola.ForeColor = System.Drawing.Color.Yellow;
             this.lblEsperaClientesCola.Location = new System.Drawing.Point(579, 703);
             this.lblEsperaClientesCola.Name = "lblEsperaClientesCola";
-            this.lblEsperaClientesCola.Size = new System.Drawing.Size(51, 32);
+            this.lblEsperaClientesCola.Size = new System.Drawing.Size(0, 32);
             this.lblEsperaClientesCola.TabIndex = 24;
-            this.lblEsperaClientesCola.Text = "jjjj";
             // 
             // lblEsperaClientesSistema
             // 
@@ -137,9 +133,8 @@ namespace Sistema_de_Colas
             this.lblEsperaClientesSistema.ForeColor = System.Drawing.Color.Yellow;
             this.lblEsperaClientesSistema.Location = new System.Drawing.Point(617, 627);
             this.lblEsperaClientesSistema.Name = "lblEsperaClientesSistema";
-            this.lblEsperaClientesSistema.Size = new System.Drawing.Size(87, 32);
+            this.lblEsperaClientesSistema.Size = new System.Drawing.Size(0, 32);
             this.lblEsperaClientesSistema.TabIndex = 23;
-            this.lblEsperaClientesSistema.Text = "jjjjjjjj";
             // 
             // label7
             // 
@@ -226,7 +221,7 @@ namespace Sistema_de_Colas
             this.btnCalcularMediaServicio.Location = new System.Drawing.Point(1044, 415);
             this.btnCalcularMediaServicio.Name = "btnCalcularMediaServicio";
             this.btnCalcularMediaServicio.Size = new System.Drawing.Size(307, 32);
-            this.btnCalcularMediaServicio.TabIndex = 30;
+            this.btnCalcularMediaServicio.TabIndex = 4;
             this.btnCalcularMediaServicio.Text = "Calcular media de servicios";
             this.btnCalcularMediaServicio.UseVisualStyleBackColor = false;
             this.btnCalcularMediaServicio.Click += new System.EventHandler(this.btnCalcularMediaServicio_Click);
@@ -239,7 +234,7 @@ namespace Sistema_de_Colas
             this.btnCalcularEspera.Location = new System.Drawing.Point(1044, 483);
             this.btnCalcularEspera.Name = "btnCalcularEspera";
             this.btnCalcularEspera.Size = new System.Drawing.Size(307, 32);
-            this.btnCalcularEspera.TabIndex = 31;
+            this.btnCalcularEspera.TabIndex = 5;
             this.btnCalcularEspera.Text = "Calcular espera en la cola";
             this.btnCalcularEspera.UseVisualStyleBackColor = false;
             this.btnCalcularEspera.Click += new System.EventHandler(this.btnCalcularEspera_Click);
@@ -252,7 +247,7 @@ namespace Sistema_de_Colas
             this.btnCalcularEsperaSistema.Location = new System.Drawing.Point(1044, 551);
             this.btnCalcularEsperaSistema.Name = "btnCalcularEsperaSistema";
             this.btnCalcularEsperaSistema.Size = new System.Drawing.Size(307, 32);
-            this.btnCalcularEsperaSistema.TabIndex = 32;
+            this.btnCalcularEsperaSistema.TabIndex = 6;
             this.btnCalcularEsperaSistema.Text = "Calcular espera en el sistema";
             this.btnCalcularEsperaSistema.UseVisualStyleBackColor = false;
             this.btnCalcularEsperaSistema.Click += new System.EventHandler(this.btnCalcularEsperaSistema_Click);
@@ -265,7 +260,7 @@ namespace Sistema_de_Colas
             this.btnCalcularEsperaClientesSistema.Location = new System.Drawing.Point(1044, 627);
             this.btnCalcularEsperaClientesSistema.Name = "btnCalcularEsperaClientesSistema";
             this.btnCalcularEsperaClientesSistema.Size = new System.Drawing.Size(307, 32);
-            this.btnCalcularEsperaClientesSistema.TabIndex = 33;
+            this.btnCalcularEsperaClientesSistema.TabIndex = 7;
             this.btnCalcularEsperaClientesSistema.Text = "Calcular espera clientes en el sistema";
             this.btnCalcularEsperaClientesSistema.UseVisualStyleBackColor = false;
             this.btnCalcularEsperaClientesSistema.Click += new System.EventHandler(this.btnCalcularEsperaClientesSistema_Click);
@@ -278,7 +273,7 @@ namespace Sistema_de_Colas
             this.btnCalcularEsperaClientesCola.Location = new System.Drawing.Point(1044, 703);
             this.btnCalcularEsperaClientesCola.Name = "btnCalcularEsperaClientesCola";
             this.btnCalcularEsperaClientesCola.Size = new System.Drawing.Size(307, 32);
-            this.btnCalcularEsperaClientesCola.TabIndex = 34;
+            this.btnCalcularEsperaClientesCola.TabIndex = 8;
             this.btnCalcularEsperaClientesCola.Text = "Calcular espera clientes en la cola";
             this.btnCalcularEsperaClientesCola.UseVisualStyleBackColor = false;
             this.btnCalcularEsperaClientesCola.Click += new System.EventHandler(this.btnCalcularEsperaClientesCola_Click);
@@ -320,7 +315,7 @@ namespace Sistema_de_Colas
             this.txtLlegadas.Location = new System.Drawing.Point(906, 99);
             this.txtLlegadas.Name = "txtLlegadas";
             this.txtLlegadas.Size = new System.Drawing.Size(271, 30);
-            this.txtLlegadas.TabIndex = 5;
+            this.txtLlegadas.TabIndex = 0;
             this.txtLlegadas.TextChanged += new System.EventHandler(this.txtLlegadas_TextChanged);
             this.txtLlegadas.Enter += new System.EventHandler(this.txtLlegadas_Enter);
             this.txtLlegadas.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLlegadas_KeyPress);
@@ -342,7 +337,7 @@ namespace Sistema_de_Colas
             this.txtServicios.Location = new System.Drawing.Point(906, 163);
             this.txtServicios.Name = "txtServicios";
             this.txtServicios.Size = new System.Drawing.Size(271, 30);
-            this.txtServicios.TabIndex = 7;
+            this.txtServicios.TabIndex = 1;
             this.txtServicios.TextChanged += new System.EventHandler(this.txtServicios_TextChanged);
             this.txtServicios.Enter += new System.EventHandler(this.txtServicios_Enter);
             this.txtServicios.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtServicios_KeyPress);
@@ -364,7 +359,7 @@ namespace Sistema_de_Colas
             this.txtEspera.Location = new System.Drawing.Point(906, 224);
             this.txtEspera.Name = "txtEspera";
             this.txtEspera.Size = new System.Drawing.Size(271, 30);
-            this.txtEspera.TabIndex = 9;
+            this.txtEspera.TabIndex = 2;
             this.txtEspera.TextChanged += new System.EventHandler(this.txtEspera_TextChanged);
             this.txtEspera.Enter += new System.EventHandler(this.txtEspera_Enter);
             this.txtEspera.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEspera_KeyPress);
@@ -374,10 +369,10 @@ namespace Sistema_de_Colas
             this.btnSalir.BackColor = System.Drawing.Color.Red;
             this.btnSalir.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalir.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnSalir.Location = new System.Drawing.Point(1192, 757);
+            this.btnSalir.Location = new System.Drawing.Point(1192, 768);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(159, 55);
-            this.btnSalir.TabIndex = 36;
+            this.btnSalir.TabIndex = 11;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
@@ -387,20 +382,34 @@ namespace Sistema_de_Colas
             this.button2.BackColor = System.Drawing.Color.DimGray;
             this.button2.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button2.Location = new System.Drawing.Point(1027, 757);
+            this.button2.Location = new System.Drawing.Point(793, 768);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(159, 55);
-            this.button2.TabIndex = 37;
+            this.button2.TabIndex = 9;
             this.button2.Text = "Nuevos Valores";
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // btnMenuPrincipal
+            // 
+            this.btnMenuPrincipal.BackColor = System.Drawing.Color.SandyBrown;
+            this.btnMenuPrincipal.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMenuPrincipal.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnMenuPrincipal.Location = new System.Drawing.Point(958, 768);
+            this.btnMenuPrincipal.Name = "btnMenuPrincipal";
+            this.btnMenuPrincipal.Size = new System.Drawing.Size(228, 55);
+            this.btnMenuPrincipal.TabIndex = 10;
+            this.btnMenuPrincipal.Text = "Regresar al Menú Principal";
+            this.btnMenuPrincipal.UseVisualStyleBackColor = false;
+            this.btnMenuPrincipal.Click += new System.EventHandler(this.btnMenuPrincipal_Click);
             // 
             // FormResultados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(56)))), ((int)(((byte)(79)))));
-            this.ClientSize = new System.Drawing.Size(1381, 848);
+            this.ClientSize = new System.Drawing.Size(1381, 860);
+            this.Controls.Add(this.btnMenuPrincipal);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.panel1);
@@ -474,5 +483,6 @@ namespace Sistema_de_Colas
         private System.Windows.Forms.TextBox txtEspera;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnMenuPrincipal;
     }
 }

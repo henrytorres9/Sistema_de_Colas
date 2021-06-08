@@ -24,8 +24,8 @@ namespace Sistema_de_Colas
             if (panel1.Width >= 599)
             {
                 timerSplash.Stop();
-                FormResultados entrada = new FormResultados();
-                entrada.Show();
+                frmMPrincipal fMPrincipal = new frmMPrincipal();
+                fMPrincipal.Show();
                 this.Hide();
             }
         }

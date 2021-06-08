@@ -121,4 +121,16 @@
   <data name="Imagen1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Imagen1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Imagen_MG1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Imagen_MG1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Imagen_MEK1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Imagen_MEK1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Imagen_MM1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Imagen_MM1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Imagen_MD1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Imagen_MD1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

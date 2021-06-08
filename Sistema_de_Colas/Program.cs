@@ -17,6 +17,10 @@ namespace Sistema_de_Colas
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new FormSplash());
+            //Application.Run(new frmMM1());
+            //Application.Run(new frmMG1());
+            //Application.Run(new frmMD1());
+            //Application.Run(new frmMEk1());
         }
     }
 }
